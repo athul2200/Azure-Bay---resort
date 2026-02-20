@@ -4,563 +4,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Stay | Azure Bay Luxury Resort</title>
+    <title>Reservation | Azure Bay Resorts</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="data:image/png;base64,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
-        DfnO/4PQqFbNTyBBpoAAAAASUVORK5CYII=">
     <style>
-        .page-header {
-            background: linear-gradient(var(--color-overlay), var(--color-overlay)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
-            height: 40vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--color-white);
-        }
-
-        .booking-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            position: relative;
-            top: -50px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-row {
+        .selection-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
         }
 
-        @media (max-width: 600px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
+        .selection-card {
+            position: relative;
+            cursor: pointer;
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            background: #fff;
         }
 
-        label {
+        .selection-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .selection-card input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .selection-card.selected {
+            border-color: var(--color-accent);
+            background-color: rgba(197, 160, 89, 0.05);
+            /* Very light accent color */
+        }
+
+        .selection-card i {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            margin-bottom: 10px;
             display: block;
-            margin-bottom: 8px;
+        }
+
+        .selection-card span {
+            font-size: 0.9rem;
             font-weight: 500;
             color: var(--color-primary);
+            display: block;
         }
 
-        input,
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: var(--font-body);
-        }
-
-        input:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--color-primary);
-        }
-
-        .summary-box {
-            background: var(--color-secondary);
-            padding: 20px;
-            border-radius: 4px;
-            margin-top: 30px;
-        }
-
-        .total-price {
-            font-size: 1.5rem;
-            color: var(--color-primary);
-            font-family: var(--font-heading);
-            font-weight: 700;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            animation: slideIn 0.3s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .close-btn {
+        .selection-card.selected::after {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             position: absolute;
-            top: 10px;
-            right: 20px;
-            color: #aaa;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
+            top: 5px;
+            right: 5px;
+            color: var(--color-accent);
+            font-size: 1rem;
         }
 
-        .close-btn:hover {
-            color: #000;
+        #room-selection-container {
+            display: none;
+            grid-column: span 2;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--color-border);
         }
     </style>
 </head>
 
-<body>
-    <header>
+<body
+    style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh;">
+
+    <header id="header" class="sticky">
         <div class="container navbar">
             <a href="index.html" class="logo">Azure <span>Bay</span></a>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="rooms.html">Rooms</a></li>
-                <li><a href="amenities.html">Amenities</a></li>
-                <li><a href="dining.html">Dining</a></li>
+                <li class="dropdown">
+                    <a href="resorts.html">Our Resorts <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="munnar.html">Birds Valley - Munnar</a></li>
+                        <li><a href="wayanad.html">Hotel Azure Bay - Wayanad</a></li>
+                        <li><a href="cherai.html">Beach Resort & Spa - Cherai</a></li>
+                        <li><a href="kuzhupilly.html">Azure Bay - Kuzhupilly</a></li>
+                    </ul>
+                </li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+                <li><a href="booking.html" class="btn btn-primary"
+                        style="color: white; border: none; padding: 12px 25px;">Book Now</a></li>
             </ul>
         </div>
     </header>
 
-    <div class="page-header">
-        <div>
-            <h1 class="hero-title animate-on-scroll">Reservation</h1>
-        </div>
-    </div>
-
-    <section style="padding-bottom: 80px;">
+    <section class="section-padding"
+        style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
         <div class="container">
-            <div class="booking-container animate-on-scroll">
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-                <form id="bookingForm"
-                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfoavOrsoIRfxVg1X0StYq6PabM2sW90VlbOcpj0Xzh7hYgGw/formResponse"
-                    method="POST" target="hidden_iframe">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" id="name" name="entry.142917070" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" id="email" name="entry.2018778750" placeholder="Your Email" required>
-                        </div>
-                    </div>
+            <div
+                style="max-width: 800px; margin: 0 auto; background: white; padding: 60px; border-radius: 5px; box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
+                <div class="text-center" style="margin-bottom: 40px;">
+                    <p class="hero-subtitle" style="color: var(--color-accent);">Reservations</p>
+                    <h2 class="section-title">Book Your Stay</h2>
+                </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Check-in Date</label>
-                            <input type="date" id="checkin" name="entry.872525354" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Check-out Date</label>
-                            <input type="date" id="checkout" name="entry.151010891" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Adults</label>
-                            <select id="adults" name="entry.2072861218">
-                                <option value="1">1 Adult</option>
-                                <option value="2" selected>2 Adults</option>
-                                <option value="3">3 Adults</option>
-                                <option value="4">4 Adults</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Children</label>
-                            <select id="children" name="entry.283801890">
-                                <option value="0">No Children</option>
-                                <option value="1">1 Child</option>
-                                <option value="2">2 Children</option>
-                                <option value="3">3 Children</option>
-                                <option value="4">4 Children</option>
-                                <option value="5">5 Children</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Select Room Type</label>
-                        <select id="roomType" name="entry.130999519">
-                            <option value="Deluxe Ocean View $350 / night">Deluxe Ocean View - $350/night</option>
-                            <option value="Executive Suite $550 / night">Executive Suite - $550/night</option>
-                            <option value="Private Beach Villa $1,200 / night">Private Beach Villa - $1,200/night
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Payment Method</label>
-                        <div style="display: flex; gap: 20px; margin-top: 10px;">
-                            <label
-                                style="font-weight: normal; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                <input type="radio" name="entry.668320475" value="Credit Card" style="width: auto;"
-                                    required> Credit
-                                Card
+                <form id="bookingForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                    <div style="grid-column: span 2;">
+                        <label
+                            style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Select
+                            Resort</label>
+                        <div class="selection-grid" id="resort-selection">
+                            <label class="selection-card">
+                                <input type="radio" name="resort" value="munnar" required>
+                                <i class="fas fa-mountain"></i>
+                                <span>Birds Valley, Munnar</span>
                             </label>
-                            <label
-                                style="font-weight: normal; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                <input type="radio" name="entry.668320475" value="PayPal" style="width: auto;" required>
-                                PayPal
+                            <label class="selection-card">
+                                <input type="radio" name="resort" value="wayanad">
+                                <i class="fas fa-tree"></i>
+                                <span>Azure Bay, Wayanad</span>
                             </label>
-                            <label
-                                style="font-weight: normal; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                <input type="radio" name="entry.668320475" value="UPI" style="width: auto;" required>
-                                UPI
+                            <label class="selection-card">
+                                <input type="radio" name="resort" value="cherai">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Beach Resort, Cherai</span>
+                            </label>
+                            <label class="selection-card">
+                                <input type="radio" name="resort" value="kuzhupilly">
+                                <i class="fas fa-water"></i>
+                                <span>Azure Bay, Kuzhupilly</span>
                             </label>
                         </div>
                     </div>
 
-                    <div id="creditCardDetails"
-                        style="display: none; background: #f9f9f9; padding: 20px; border-radius: 5px; border: 1px solid #eee; margin-top: 15px;">
-                        <h4 style="margin-bottom: 15px; font-size: 1.1rem;">Card Details</h4>
-                        <div class="form-group">
-                            <label>Card Number</label>
-                            <input type="text" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Expiry Date</label>
-                                <input type="text" placeholder="MM/YY" maxlength="5">
-                            </div>
-                            <div class="form-group">
-                                <label>CVV</label>
-                                <input type="text" placeholder="123" maxlength="3">
-                            </div>
+                    <div>
+                        <label
+                            style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Check-In</label>
+                        <input type="date" id="checkin" required
+                            style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
+                    </div>
+
+                    <div>
+                        <label
+                            style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Check-Out</label>
+                        <input type="date" id="checkout" required
+                            style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
+                    </div>
+
+                    <div>
+                        <label
+                            style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Adults</label>
+                        <input type="number" id="adults" min="1" value="0" required
+                            style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
+                    </div>
+
+                    <div>
+                        <label
+                            style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Children</label>
+                        <input type="number" id="children" min="0" value="0"
+                            style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
+                    </div>
+
+                    <div id="room-selection-container">
+                        <label
+                            style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Room
+                            Type</label>
+                        <div class="selection-grid" id="room-selection">
+                            <!-- Dynamically filled -->
                         </div>
                     </div>
 
-                    <div id="upiDetails"
-                        style="display: none; background: #f9f9f9; padding: 20px; border-radius: 5px; border: 1px solid #eee; margin-top: 15px;">
-                        <h4 style="margin-bottom: 15px; font-size: 1.1rem;">Select UPI App</h4>
-                        <div style="display: flex; gap: 20px; margin-bottom: 15px; flex-wrap: wrap;">
-                            <label
-                                style="font-weight: normal; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                <input type="radio" name="upiApp" value="gpay" style="width: auto;">
-                                <img src="https://img.icons8.com/?size=100&id=am4ltuIYDpQ5&format=png&color=000000"
-                                    alt="GPay" style="height: 24px;">
-                                GPay
-                            </label>
-                            <label
-                                style="font-weight: normal; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                <input type="radio" name="upiApp" value="phonepe" style="width: auto;">
-                                <img src="https://img.icons8.com/?size=100&id=OYtBxIlJwMGA&format=png&color=000000"
-                                    alt="PhonePe" style="height: 24px;">
-                                PhonePe
-                            </label>
-                            <label
-                                style="font-weight: normal; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                <input type="radio" name="upiApp" value="paytm" style="width: auto;">
-                                <img src="https://img.icons8.com/?size=100&id=68067&format=png&color=000000" alt="Paytm"
-                                    style="height: 24px;">
-                                Paytm
-                            </label>
-                            <label
-                                style="font-weight: normal; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                                <input type="radio" name="upiApp" value="navi" style="width: auto;">
-                                <img src="https://cdn.brandfetch.io/idiYJcltMT/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1768927574147"
-                                    alt="Navi" style="height: 24px;">
-                                Navi
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label>UPI ID</label>
-                            <input type="text" placeholder="example@upi">
-                        </div>
+                    <div>
+                        <input type="text" id="name" placeholder="Your Name" required
+                            style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
-                    <div class="summary-box">
-                        <h3>Booking Summary</h3>
-                        <p style="margin: 10px 0;">Duration: <span id="duration">0</span> nights</p>
-                        <div
-                            style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                            <span>Total Estimate:</span>
-                            <span class="total-price">$<span id="total">0</span></span>
-                        </div>
+                    <div>
+                        <input type="tel" id="phone" placeholder="Mobile Number" required
+                            style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 30px;">Confirm
-                        Booking</button>
+                    <div style="grid-column: span 2;">
+                        <input type="email" id="email" placeholder="Email Address" required
+                            style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
+                    </div>
+
+                    <div style="grid-column: span 2;">
+                        <textarea id="message" rows="4" placeholder="Special Requests"
+                            style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body); resize: none;"></textarea>
+                    </div>
+
+                    <div style="grid-column: span 2; margin-top: 10px;">
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; padding: 20px; font-size: 1rem;">Confirm Reservation</button>
+                    </div>
                 </form>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Success Modal -->
-    <div id="successModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <i class="fas fa-check-circle"
-                style="font-size: 3rem; color: var(--color-primary); margin-bottom: 20px;"></i>
-            <h3 style="font-family: var(--font-heading); color: var(--color-primary);">Booking Confirmed!</h3>
-            <p style="margin: 15px 0; color: #666;">Thank you! Your reservation request has been received.</p>
-            <button class="btn btn-primary" id="closeModalBtn" style="width: 100%;">Close</button>
-        </div>
-    </div>
-
-    <footer>
+    <footer style="background: rgba(26, 46, 38, 0.95);">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <a href="index.html" class="footer-logo">Azure <span>Bay</span></a>
-                    <p>Experience the epitome of luxury and tranquility at Azure Bay. Your perfect escape awaits.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/azure.bay/"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="rooms.html">Rooms & Suites</a>
-                    <a href="dining.html">Dining</a>
-                    <a href="booking.html">Book Now</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Paradise Road, Tropical Island</p>
-                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
-                    <p><i class="fas fa-envelope"></i> info@azurebayresort.com</p>
-                </div>
-
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 Azure Bay Luxury Resort. All Rights Reserved.</p>
+            <div class="copyright" style="text-align: center; color: #888; padding: 20px 0;">
+                <p>&copy; 2026 Azure Bay Resorts. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
     <script src="script.js"></script>
     <script>
-        // Booking Calculation Logic
-        const checkin = document.getElementById('checkin');
-        const checkout = document.getElementById('checkout');
-        const roomType = document.getElementById('roomType');
-        const durationSpan = document.getElementById('duration');
-        const totalSpan = document.getElementById('total');
+        const resortRooms = {
+            'munnar': [
+                { value: 'valley-view-suite', label: 'Valley View Suite', icon: 'fas fa-mountain' },
+                { value: 'misty-peak-cottage', label: 'Misty Peak Cottage', icon: 'fas fa-home' },
+                { value: 'standard-luxury-room', label: 'Standard Luxury Room', icon: 'fas fa-bed' }
+            ],
+            'wayanad': [
+                { value: 'rainforest-executive-suite', label: 'Rainforest Executive Suite', icon: 'fas fa-tree' },
+                { value: 'boutique-deluxe-room', label: 'Boutique Deluxe Room', icon: 'fas fa-concierge-bell' },
+                { value: 'family-forest-suite', label: 'Family Forest Suite', icon: 'fas fa-users' }
+            ],
+            'cherai': [
+                { value: 'oceanfront-pool-villa', label: 'Oceanfront Pool Villa', icon: 'fas fa-swimmer' },
+                { value: 'lagoon-view-suite', label: 'Lagoon View Suite', icon: 'fas fa-water' },
+                { value: 'heritage-garden-cottage', label: 'Heritage Garden Cottage', icon: 'fas fa-leaf' }
+            ],
+            'kuzhupilly': [
+                { value: 'eco-beach-cabin', label: 'Eco Beach Cabin', icon: 'fas fa-seedling' },
+                { value: 'sunset-hideaway', label: 'Sunset Hideaway', icon: 'fas fa-sun' },
+                { value: 'tropical-garden-room', label: 'Tropical Garden Room', icon: 'fas fa-palette' }
+            ]
+        };
 
-        // Payment Method Logic
-        const paymentRadios = document.querySelectorAll('input[name="entry.668320475"]');
-        const creditCardDetails = document.getElementById('creditCardDetails');
-        const upiDetails = document.getElementById('upiDetails');
+        const resortSelection = document.getElementById('resort-selection');
+        const roomSelection = document.getElementById('room-selection');
+        const roomContainer = document.getElementById('room-selection-container');
 
-        paymentRadios.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                if (e.target.value === 'Credit Card') {
-                    creditCardDetails.style.display = 'block';
-                    upiDetails.style.display = 'none';
-                } else if (e.target.value === 'UPI') {
-                    creditCardDetails.style.display = 'none';
-                    upiDetails.style.display = 'block';
+        function updateSelectionStyles(containerId) {
+            const container = document.getElementById(containerId);
+            const cards = container.querySelectorAll('.selection-card');
+            cards.forEach(card => {
+                const radio = card.querySelector('input');
+                if (radio.checked) {
+                    card.classList.add('selected');
                 } else {
-                    creditCardDetails.style.display = 'none';
-                    upiDetails.style.display = 'none';
+                    card.classList.remove('selected');
                 }
+            });
+        }
+
+        function generateRoomCards(selectedResort, selectedRoom = null) {
+            roomSelection.innerHTML = '';
+
+            if (selectedResort && resortRooms[selectedResort]) {
+                roomContainer.style.display = 'block';
+                resortRooms[selectedResort].forEach(room => {
+                    const label = document.createElement('label');
+                    label.className = 'selection-card';
+
+                    const isChecked = selectedRoom && (room.value.includes(selectedRoom) || selectedRoom.includes(room.value.split('-')[0]));
+
+                    label.innerHTML = `
+                        <input type="radio" name="room_type" value="${room.value}" ${isChecked ? 'checked' : ''} required>
+                        <i class="${room.icon}"></i>
+                        <span>${room.label}</span>
+                    `;
+
+                    label.addEventListener('click', () => {
+                        updateSelectionStyles('room-selection');
+                    });
+
+                    roomSelection.appendChild(label);
+                });
+                updateSelectionStyles('room-selection');
+            } else {
+                roomContainer.style.display = 'none';
+            }
+        }
+
+        // Event listeners for resort cards
+        resortSelection.querySelectorAll('input').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                updateSelectionStyles('resort-selection');
+                generateRoomCards(e.target.value);
+            });
+
+            // Add click listener to label for immediate visual feedback
+            radio.parentElement.addEventListener('click', () => {
+                updateSelectionStyles('resort-selection');
             });
         });
 
-        function extractPrice(roomValue) {
-            // Extracts price from strings like "Deluxe Ocean View $350 / night"
-            // Looks for a number following a $ sign
-            const match = roomValue.match(/\$(\d{1,3}(,\d{3})*)/);
-            if (match && match[1]) {
-                return parseInt(match[1].replace(/,/g, ''));
-            }
-            return 0;
-        }
+        // Handle URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const resortParam = urlParams.get('resort');
+        const roomParam = urlParams.get('room');
 
-        function calculateTotal() {
-            const start = new Date(checkin.value);
-            const end = new Date(checkout.value);
-            const roomPrice = extractPrice(roomType.value);
-
-            if (start && end && start < end) {
-                const diffTime = Math.abs(end - start);
-                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                durationSpan.textContent = diffDays;
-                totalSpan.textContent = diffDays * roomPrice;
-            } else {
-                durationSpan.textContent = '0';
-                totalSpan.textContent = '0';
+        if (resortParam) {
+            const resortRadio = resortSelection.querySelector(`input[value="${resortParam}"]`);
+            if (resortRadio) {
+                resortRadio.checked = true;
+                updateSelectionStyles('resort-selection');
+                generateRoomCards(resortParam, roomParam);
             }
         }
 
-        checkin.addEventListener('change', calculateTotal);
-        checkout.addEventListener('change', calculateTotal);
-        roomType.addEventListener('change', calculateTotal);
-
-        // Form Submission and Modal Logic
-        let submitted = false;
-        const bookingForm = document.getElementById('bookingForm');
-        const successModal = document.getElementById('successModal');
-        const closeBtn = document.querySelector('.close-btn');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-
-        bookingForm.addEventListener('submit', () => {
-            submitted = true;
-            // Show modal immediately with a slight delay for better UX
-            setTimeout(() => {
-                successModal.style.display = 'flex';
-            }, 500);
-        });
-
-        document.getElementById('hidden_iframe').onload = function () {
-            if (submitted) {
-                // Form reset logic can happen in background
-                bookingForm.reset();
-                calculateTotal(); // Reset totals
-                // Reset payment method details visibility
-                creditCardDetails.style.display = 'none';
-                upiDetails.style.display = 'none';
-                submitted = false;
-            }
-        };
-
-        function closeModal() {
-            successModal.style.display = 'none';
-        }
-
-        closeBtn.addEventListener('click', closeModal);
-        closeModalBtn.addEventListener('click', closeModal);
-        window.addEventListener('click', (e) => {
-            if (e.target === successModal) {
-                closeModal();
-            }
-        });
-        document.getElementById("bookingForm").addEventListener("submit", function (e) {
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
             e.preventDefault();
 
-            fetch("http://127.0.0.1:8000/api/book/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name: document.getElementById("name").value,
-                    email: document.getElementById("email").value,
-                    phone: document.getElementById("phone").value,
-                    checkin: document.getElementById("checkin").value,
-                    checkout: document.getElementById("checkout").value,
-                    guests: document.getElementById("guests").value
-                })
-            })
-                .then(res => res.json())
-                .then(data => {
-                    alert("Booking successful!");
-                    console.log(data);
-                })
-                .catch(err => {
-                    alert("Booking failed!");
-                    console.error(err);
-                });
-        });
+            const selectedResort = document.querySelector('input[name="resort"]:checked')?.value;
+            const selectedRoom = document.querySelector('input[name="room_type"]:checked')?.value;
 
+            if (!selectedResort || !selectedRoom) {
+                alert('Please select a resort and a room type.');
+                return;
+            }
+
+            alert('Thank you for choosing Azure Bay Resorts! Your reservation request for ' + selectedResort + ' (' + selectedRoom + ') has been received. Our team will contact you shortly.');
+            window.location.href = 'index.html';
+        });
     </script>
 </body>
 

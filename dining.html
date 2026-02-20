@@ -120,19 +120,27 @@
 </head>
 
 <body>
-    <header>
+    <header id="header" class="sticky">
         <div class="container navbar">
             <a href="index.html" class="logo">Azure <span>Bay</span></a>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="rooms.html">Rooms</a></li>
-                <li><a href="amenities.html">Amenities</a></li>
-                <li><a href="dining.html" class="active">Dining</a></li>
+                <li class="dropdown">
+                    <a href="resorts.html">Our Resorts <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="munnar.html">Birds Valley - Munnar</a></li>
+                        <li><a href="wayanad.html">Hotel Azure Bay - Wayanad</a></li>
+                        <li><a href="cherai.html">Beach Resort & Spa - Cherai</a></li>
+                        <li><a href="kuzhupilly.html">Azure Bay - Kuzhupilly</a></li>
+                    </ul>
+                </li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+                <li><a href="booking.html" class="btn btn-primary"
+                        style="color: white; border: none; padding: 12px 25px;">Book Now</a></li>
             </ul>
         </div>
     </header>

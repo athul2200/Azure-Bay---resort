@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Azure Bay | Wayanad Luxury Stay</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header id="header" class="sticky">
+        <div class="container navbar">
+            <a href="index.html" class="logo">Azure <span>Bay</span></a>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="resorts.html" class="active">Our Resorts <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="munnar.html">Birds Valley - Munnar</a></li>
+                        <li><a href="wayanad.html">Hotel Azure Bay - Wayanad</a></li>
+                        <li><a href="cherai.html">Beach Resort & Spa - Cherai</a></li>
+                        <li><a href="kuzhupilly.html">Azure Bay - Kuzhupilly</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="btn btn-primary"
+                        style="color: white; border: none; padding: 12px 25px;">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero"
+        style="background-image: linear-gradient(var(--color-overlay), var(--color-overlay)), url('https://images.unsplash.com/photo-1626014303757-646639454836?auto=format&fit=crop&w=1920&q=80'); height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background-size: cover; background-position: center;">
+        <div class="hero-content" style="opacity: 1; transform: none;">
+            <p class="hero-subtitle">Wayanad</p>
+            <h1 class="hero-title" style="font-size: 4rem;">Hotel Azure Bay</h1>
+        </div>
+    </section>
+
+    <style>
+        .resort-detail-section {
+            padding: 80px 0;
+        }
+
+        .resort-detail-section:nth-child(even) {
+            background-color: var(--color-secondary);
+        }
+
+        .full-width-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .full-width-content.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .content-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .content-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .activity-icon {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <!-- Overview Section -->
+    <section class="resort-detail-section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 class="section-title">The Heart of Wayanad</h2>
+                <p style="font-size: 1.1rem; color: var(--color-text-light); margin-bottom: 20px;">
+                    Hotel Azure Bay Wayanad is a four-star rated Hospitality Complex that is easily accessible from
+                    the center of Kalpatta town.
+                </p>
+                <p style="font-size: 1.1rem; color: var(--color-text-light);">
+                    Designed to provide superb facilities and comforts to its guests, Hotel Azure Bay has what it
+                    takes to impart the best of hospitality. Spaciousness and elegance are our hallmarks, ensuring an
+                    unforgettable stay in the mist-covered hills.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation Section -->
+    <section class="resort-detail-section">
+        <div class="container">
+            <h2 class="section-title">Accommodation</h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                <!-- Room 1 -->
+                <div class="room-card"
+                    style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1552554650-6ed63b516886?auto=format&fit=crop&w=800&q=80"
+                        alt="Rainforest Executive Suite" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 25px;">
+                        <h4>Rainforest Executive Suite</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px;">Luxury suites
+                            overlooking the lush Western Ghats canopy, offering complete tranquility.</p>
+                        <a href="booking.html?resort=wayanad&room=executive" class="btn btn-primary"
+                            style="width: 100%; text-align: center;">Book Now</a>
+                    </div>
+                </div>
+                <!-- Room 2 -->
+                <div class="room-card"
+                    style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1540611025311-01df3cef54b5?auto=format&fit=crop&w=800&q=80"
+                        alt="Boutique Deluxe Room" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 25px;">
+                        <h4>Boutique Deluxe Room</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px;">Stylishly
+                            appointed rooms with modern four-star amenities and town convenience.</p>
+                        <a href="booking.html?resort=wayanad&room=deluxe" class="btn btn-primary"
+                            style="width: 100%; text-align: center;">Book Now</a>
+                    </div>
+                </div>
+                <!-- Room 3 -->
+                <div class="room-card"
+                    style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1582234057032-473d0a273b52?auto=format&fit=crop&w=800&q=80"
+                        alt="Family Forest Suite" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 25px;">
+                        <h4>Family Forest Suite</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px;">Spacious
+                            two-bedroom units designed for comfort and togetherness on your trip.</p>
+                        <a href="booking.html?resort=wayanad&room=family" class="btn btn-primary"
+                            style="width: 100%; text-align: center;">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dining Section -->
+    <section class="resort-detail-section">
+        <div class="container">
+            <div class="full-width-content">
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200"
+                        alt="Rainforest Bistro Wayanad">
+                </div>
+                <div class="content-text">
+                    <h2 class="section-title" style="text-align: left;">Rainforest Bistro</h2>
+                    <p>Savor the authentic flavors of Northern Kerala at our Rainforest Bistro. Our chefs use locally
+                        sourced tribal spices to create a menu that is both traditional and innovative.</p>
+                    <p>Dine amidst the greenery with our open-air seating area, where the sounds of the forest provide a
+                        melodious backdrop to your meal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banquets Section -->
+    <section class="resort-detail-section">
+        <div class="container">
+            <div class="full-width-content reverse">
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200"
+                        alt="Canopy Ballroom Wayanad">
+                </div>
+                <div class="content-text">
+                    <h2 class="section-title" style="text-align: left;">Canopy Ballroom</h2>
+                    <p>Host your grandest events at the Canopy Ballroom. With its high ceilings and elegant
+                        forest-inspired decor, it's the premier choice for weddings and large corporate conventions.</p>
+                    <p>Our dedicated events team will ensure every detail is handled with precision, from custom
+                        catering to state-of-the-art technical support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="resort-detail-section">
+        <div class="container">
+            <h2 class="section-title">Resort Facilities</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <i class="fas fa-spa activity-icon"></i>
+                    <h3>Ayurvedic Spa</h3>
+                    <p>Reboot your body and mind with authentic Kerala Ayurvedic treatments.</p>
+                </div>
+                <div class="activity-card">
+                    <i class="fas fa-dumbbell activity-icon"></i>
+                    <h3>Fitness Center</h3>
+                    <p>Keep up with your wellness routine in our modern, well-equipped gym.</p>
+                </div>
+                <div class="activity-card">
+                    <i class="fas fa-swimmer activity-icon"></i>
+                    <h3>Forest Pool</h3>
+                    <p>Relax in our temperature-controlled pool surrounded by ancient trees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="resort-detail-section">
+        <div class="container">
+            <h2 class="section-title">Activities</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <i class="fas fa-moon activity-icon"></i>
+                    <h3>Night Safaris</h3>
+                    <p>Experience the forest after dark with our guided nocturnal wildlife tours.</p>
+                </div>
+                <div class="activity-card">
+                    <i class="fas fa-water activity-icon"></i>
+                    <h3>Bamboo Rafting</h3>
+                    <p>Drift through the serene waters of the Pozhuthana river on a traditional raft.</p>
+                </div>
+                <div class="activity-card">
+                    <i class="fas fa-tree activity-icon"></i>
+                    <h3>Forest Trekking</h3>
+                    <p>Embark on challenging trails lead by local naturalists to discover hidden waterfalls.</p>
+                </div>
+                <div class="activity-card">
+                    <i class="fas fa-users-cog activity-icon"></i>
+                    <h3>Tribal Visits</h3>
+                    <p>Gain unique insights into the lives and traditions of local indigenous communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content"
+                style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 60px;">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">Azure <span>Bay</span></a>
+                    <p>Azure Bay Resorts is a premium hospitality brand offering immersive nature stays across Kerala’s
+                        most scenic destinations.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Destinations</h4>
+                    <a href="munnar.html">Birds Valley - Munnar</a>
+                    <a href="wayanad.html">Hotel Azure Bay - Wayanad</a>
+                    <a href="cherai.html">Beach Resort & Spa - Cherai</a>
+                    <a href="kuzhupilly.html">Azure Bay - Kuzhupilly</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> +91 XXXXX XXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@azurebayresorts.com</p>
+                </div>
+            </div>
+            <div class="copyright"
+                style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                <p>&copy; 2026 Azure Bay Resorts. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
