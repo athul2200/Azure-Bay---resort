@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities at Birds Valley Munnar | Azure Bay Resorts</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        .activity-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1593693411515-c202e93fe76f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .activities-detail-section {
+            padding: 100px 0;
+            background: #fdfdfd;
+        }
+
+        .activity-detail-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            align-items: center;
+        }
+
+        .activity-detail-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .activity-detail-card:nth-child(even) .activity-detail-content {
+            direction: ltr;
+        }
+
+        .activity-detail-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .activity-detail-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+        }
+
+        .activity-detail-content p {
+            line-height: 1.8;
+            color: var(--color-text-light);
+            margin-bottom: 25px;
+        }
+
+        .back-nav {
+            padding: 20px 0;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: var(--header-height);
+            z-index: 900;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-primary);
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .back-link:hover {
+            color: var(--color-accent);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 968px) {
+            .activity-detail-card {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 60px;
+            }
+
+            .activity-detail-card:nth-child(even) {
+                direction: ltr;
+            }
+
+            .activity-detail-image img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="sticky">
+        <div class="container navbar">
+            <a href="index.html" class="logo">Azure <span>Bay</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="resorts.html" class="active">Our Resorts <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="munnar.html">Birds Valley - Munnar</a></li>
+                        <li><a href="wayanad.html">Hotel Azure Bay - Wayanad</a></li>
+                        <li><a href="cherai.html">Beach Resort & Spa - Cherai</a></li>
+                        <li><a href="kuzhupilly.html">Azure Bay - Kuzhupilly</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Activity Hero -->
+    <section class="activity-hero">
+        <div class="container">
+            <h1 class="animate-on-scroll appear">Adventures at Birds Valley</h1>
+            <p class="animate-on-scroll appear" style="font-size: 1.2rem; margin-top: 20px;">Immerse yourself in the
+                tranquility and thrill of the Munnar highlands.</p>
+        </div>
+    </section>
+
+    <!-- Back Navigation -->
+    <nav class="back-nav">
+        <div class="container">
+            <a href="munnar.html#activities" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Munnar Resort
+            </a>
+        </div>
+    </nav>
+
+    <!-- Activities Detail -->
+    <section class="activities-detail-section">
+        <div class="container">
+            <!-- Activity 1 -->
+            <div class="activity-detail-card animate-on-scroll appear">
+                <div class="activity-detail-image">
+                    <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Nature Walks">
+                </div>
+                <div class="activity-detail-content">
+                    <i class="fas fa-hiking"
+                        style="font-size: 2rem; color: var(--color-accent); margin-bottom: 20px;"></i>
+                    <h3>Guided Nature Walks</h3>
+                    <p>Embark on an enchanting journey through our 6-acre sanctuary and the surrounding emerald hills.
+                        Our expert naturalists will lead you through hidden trails, pointing out rare flora and the
+                        vibrant birdlife that defines the region. These walks are designed for all age groups and offer
+                        a perfect blend of exercise and environmental education.</p>
+                    <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-light);">
+                        <li>Duration: 2-3 Hours</li>
+                        <li>Best Time: Early Morning (6:30 AM)</li>
+                        <li>Inclusions: Guide & Refreshments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Activity 2 -->
+            <div class="activity-detail-card animate-on-scroll appear">
+                <div class="activity-detail-image">
+                    <img src="https://images.unsplash.com/photo-1544735047-380695420377?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Tea Tours">
+                </div>
+                <div class="activity-detail-content">
+                    <i class="fas fa-leaf"
+                        style="font-size: 2rem; color: var(--color-accent); margin-bottom: 20px;"></i>
+                    <h3>Plantation Tea Tours</h3>
+                    <p>Discover the journey of your morning brew. Take a guided tour through Munnar's world-famous tea
+                        estates. Learn the delicate process of picking the perfect leaves and witness the traditional
+                        methods used in factory processing. The tour culminates in a professional tea-tasting session
+                        where you can savor the different grades of high-altitude tea.</p>
+                    <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-light);">
+                        <li>Duration: Half Day</li>
+                        <li>Highlights: Factory Visit & Tasting</li>
+                        <li>Transport: Provided by Resort</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Activity 3 -->
+            <div class="activity-detail-card animate-on-scroll appear">
+                <div class="activity-detail-image">
+                    <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Campfires">
+                </div>
+                <div class="activity-detail-content">
+                    <i class="fas fa-fire"
+                        style="font-size: 2rem; color: var(--color-accent); margin-bottom: 20px;"></i>
+                    <h3>Starlit Campfires</h3>
+                    <p>As evening mists roll in, gather around our signature campfire pits located at scenic vantage
+                        points. Share stories, enjoy traditional snacks, and witness the mountain sky clear into a
+                        canopy of stars. It's the perfect way to unwind after a day of adventure, offering a warm and
+                        communal atmosphere for families and couples alike.</p>
+                    <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-light);">
+                        <li>Frequency: Every Evening (Weather permitting)</li>
+                        <li>Setup: Traditional stone hearths</li>
+                        <li>Inclusions: Music & BBQ on request</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Activity 4 -->
+            <div class="activity-detail-card animate-on-scroll appear">
+                <div class="activity-detail-image">
+                    <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Bird Watching">
+                </div>
+                <div class="activity-detail-content">
+                    <i class="fas fa-binoculars"
+                        style="font-size: 2rem; color: var(--color-accent); margin-bottom: 20px;"></i>
+                    <h3>Avian Photography Tours</h3>
+                    <p>Designed for enthusiasts and professional photographers, our bird-watching tours leverage the
+                        resort's unique position as a natural bird haven. With over 60 indigenous species spotted
+                        on-site, including the Nilgiri Flycatcher and Malabar Whistling Thrush, our guides will help you
+                        set up at the best vantage points for that perfect shot.</p>
+                    <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-light);">
+                        <li>Equipment: Binoculars provided</li>
+                        <li>Specialty: Rare endemic species</li>
+                        <li>Best Season: October to March</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">Azure <span>Bay</span></a>
+                    <p>Azure Bay Resorts is a premium hospitality brand offering immersive nature stays across Kerala’s
+                        most scenic destinations.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Destinations</h4>
+                    <a href="munnar.html">Birds Valley - Munnar</a>
+                    <a href="wayanad.html">Hotel Azure Bay - Wayanad</a>
+                    <a href="cherai.html">Beach Resort & Spa - Cherai</a>
+                    <a href="kuzhupilly.html">Azure Bay - Kuzhupilly</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> +91 XXXXX XXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@azurebayresorts.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Azure Bay Resorts. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

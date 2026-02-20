@@ -285,6 +285,67 @@ header.sticky .nav-links li a {
     color: var(--color-accent) !important;
 }
 
+/* Sub Navigation */
+.sub-nav {
+    background: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 90px;
+    /* Aligned with fixed header height */
+    z-index: 100;
+    padding: 20px 0;
+    transition: var(--transition-smooth);
+}
+
+.sub-nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.sub-nav-links a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition-smooth);
+    opacity: 0.8;
+}
+
+.sub-nav-links a:hover {
+    color: var(--color-accent);
+    opacity: 1;
+}
+
+.sub-nav-links i {
+    font-size: 1rem;
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .sub-nav-links {
+        gap: 20px;
+    }
+
+    .sub-nav-links a {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* Section Anchoring Offset */
+section[id] {
+    scroll-margin-top: 150px;
+    /* Header (90px) + Sub-nav (approx 60px) */
+}
+
 /* Mobile Toggle */
 .menu-toggle {
     display: none;
@@ -431,6 +492,182 @@ header.sticky .menu-toggle {
 
 .resort-card:hover img {
     transform: scale(1.1);
+}
+
+/* Gallery Styles */
+.resort-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.resort-gallery-card {
+    position: relative;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.resort-gallery-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    transition: var(--transition-smooth);
+    z-index: 1;
+}
+
+.resort-gallery-card:hover {
+    transform: translateY(-10px);
+}
+
+.resort-gallery-card:hover::after {
+    background: linear-gradient(to top, var(--color-primary), transparent);
+    opacity: 0.9;
+}
+
+.resort-gallery-card .card-content {
+    position: relative;
+    z-index: 10;
+}
+
+.resort-gallery-card h3 {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    transform: translateY(0);
+    transition: var(--transition-smooth);
+}
+
+.resort-gallery-card p {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Individual Gallery Pages Grid */
+.gallery-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.gallery-detail-item {
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-detail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-detail-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Sub-Navigation (For Resort Detail Pages) */
+.sub-nav {
+    background: var(--color-white);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: var(--header-height);
+    z-index: 900;
+}
+
+.sub-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sub-nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.sub-nav-links li a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sub-nav-links li a i {
+    color: var(--color-accent);
+}
+
+.sub-nav-links li a:hover {
+    color: var(--color-accent);
+}
+
+.sub-nav-action {
+    position: absolute;
+    right: 30px;
+}
+
+.nav-btn-activities {
+    background: var(--color-accent);
+    color: var(--color-white) !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-smooth);
+}
+
+.nav-btn-activities i {
+    color: var(--color-white);
+}
+
+.nav-btn-activities:hover {
+    background: var(--color-primary);
+    color: var(--color-white) !important;
+}
+
+@media (max-width: 1100px) {
+    .sub-nav-action {
+        position: static;
+        margin-top: 15px;
+    }
+
+    .sub-nav-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .sub-nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
 }
 
 /* Footer */
