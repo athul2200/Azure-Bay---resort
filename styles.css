@@ -139,7 +139,7 @@ ul {
 }
 
 .section-title {
-    font-size: 3rem;
+    font-size: 38px;
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
@@ -149,10 +149,11 @@ ul {
 .section-title::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 275px;
     height: 2px;
-    background: var(--color-accent);
+    background: #b8b6b6;
     margin: 20px auto 0;
+    margin-left: 0px;
 }
 
 /* Header & Navigation */

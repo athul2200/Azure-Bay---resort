@@ -10,6 +10,16 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- EmailJS script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "IvALScJ1JLHVtyM_e",
+            });
+        })();
+    </script>
     <style>
         .selection-grid {
             display: grid;
@@ -199,9 +209,25 @@
                             style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
-                    <div style="grid-column: span 2;">
+                    <div style="grid-column: span 2; display: flex; gap: 10px;">
                         <input type="email" id="email" placeholder="Email Address" required
-                            style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
+                            style="flex: 1; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
+                        <button type="button" id="sendOtpBtn"
+                            style="padding: 12px 20px; border: 1px solid var(--color-accent); background: var(--color-accent); color: white; border-radius: 4px; font-family: var(--font-body); cursor: pointer; font-weight: 500; transition: var(--transition-smooth); white-space: nowrap;">Send
+                            OTP</button>
+                    </div>
+
+                    <div id="otpContainer" style="grid-column: span 2; display: none; gap: 10px;">
+                        <input type="text" id="otpInput" placeholder="Enter 6-digit OTP"
+                            style="flex: 1; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
+                        <button type="button" id="verifyOtpBtn"
+                            style="padding: 12px 20px; border: 1px solid var(--color-primary); background: var(--color-primary); color: white; border-radius: 4px; font-family: var(--font-body); cursor: pointer; font-weight: 500; transition: var(--transition-smooth); white-space: nowrap;">Verify
+                            OTP</button>
+                    </div>
+
+                    <div id="emailVerificationStatus"
+                        style="grid-column: span 2; display: none; color: #2e7d32; font-weight: 600; font-size: 0.95rem; align-items: center; gap: 8px;">
+                        <i class="fas fa-check-circle"></i> Email Successfully Verified
                     </div>
 
                     <div style="grid-column: span 2;">
@@ -280,14 +306,13 @@
     <script>
         const resortRooms = {
             'munnar': [
-                { value: 'valley-view-suite', label: 'Valley View Suite', icon: 'fas fa-mountain' },
-                { value: 'misty-peak-cottage', label: 'Misty Peak Cottage', icon: 'fas fa-home' },
-                { value: 'standard-luxury-room', label: 'Standard Luxury Room', icon: 'fas fa-bed' }
+                { value: 'valley-view-suite', label: 'MOUNTAIN VIEW COTTAGE', icon: 'fas fa-mountain' },
+                { value: 'misty-peak-cottage', label: 'HONEYMOON COTTAGE', icon: 'fas fa-home' },
+                { value: 'standard-luxury-room', label: 'WOODEN COTTAGE', icon: 'fas fa-bed' }
             ],
             'wayanad': [
-                { value: 'rainforest-executive-suite', label: 'Rainforest Executive Suite', icon: 'fas fa-tree' },
-                { value: 'boutique-deluxe-room', label: 'Boutique Deluxe Room', icon: 'fas fa-concierge-bell' },
-                { value: 'family-forest-suite', label: 'Family Forest Suite', icon: 'fas fa-users' }
+                { value: 'SUITE ROOM', label: 'SUITE ROOM', icon: 'fas fa-tree' },
+                { value: 'PREMIUM ROOM', label: 'PREMIUM ROOM', icon: 'fas fa-concierge-bell' },
             ],
             'cherai': [
                 { value: 'oceanfront-pool-villa', label: 'Oceanfront Pool Villa', icon: 'fas fa-swimmer' },
@@ -295,9 +320,9 @@
                 { value: 'heritage-garden-cottage', label: 'Heritage Garden Cottage', icon: 'fas fa-leaf' }
             ],
             'kuzhupilly': [
-                { value: 'eco-beach-cabin', label: 'Eco Beach Cabin', icon: 'fas fa-seedling' },
-                { value: 'sunset-hideaway', label: 'Sunset Hideaway', icon: 'fas fa-sun' },
-                { value: 'tropical-garden-room', label: 'Tropical Garden Room', icon: 'fas fa-palette' }
+                { value: 'Heritage Room', label: 'Heritage Room', icon: 'fas fa-seedling' },
+                { value: 'Backwater Bungalow', label: 'Backwater Bungalow', icon: 'fas fa-sun' },
+                { value: 'Backwater View Room', label: 'Backwater View Room', icon: 'fas fa-palette' }
             ]
         };
 
@@ -374,8 +399,69 @@
             }
         }
 
+        const sendOtpBtn = document.getElementById('sendOtpBtn');
+        const otpContainer = document.getElementById('otpContainer');
+        const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+        const otpInput = document.getElementById('otpInput');
+        const emailVerificationStatus = document.getElementById('emailVerificationStatus');
+        const emailInput = document.getElementById('email');
+
+        let generatedOtp = null;
+        let isEmailVerified = false;
+
+        sendOtpBtn.addEventListener('click', () => {
+            const email = emailInput.value;
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address first.');
+                return;
+            }
+
+            // Generate OTP
+            generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+            sendOtpBtn.innerText = 'Sending...';
+            sendOtpBtn.disabled = true;
+
+            const templateParams = {
+                to_email: email,
+                otp: generatedOtp
+            };
+
+            emailjs.send('service_y1o0o4c', 'template_uiin0y9', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('OTP has been sent to ' + email + '!');
+                    otpContainer.style.display = 'flex';
+                    sendOtpBtn.innerText = 'Resend OTP';
+                    sendOtpBtn.disabled = false;
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to send OTP. Error: ' + (error.text || 'Check your Service ID and Template ID.'));
+                    sendOtpBtn.innerText = 'Send OTP';
+                    sendOtpBtn.disabled = false;
+                });
+        });
+
+        verifyOtpBtn.addEventListener('click', () => {
+            const enteredOtp = otpInput.value.trim();
+            if (enteredOtp === generatedOtp) {
+                isEmailVerified = true;
+                otpContainer.style.display = 'none';
+                emailVerificationStatus.style.display = 'flex';
+                emailInput.style.backgroundColor = '#f5f5f5';
+                emailInput.readOnly = true;
+                sendOtpBtn.style.display = 'none';
+            } else {
+                alert('Invalid OTP. Please try again.');
+            }
+        });
+
         document.getElementById('bookingForm').addEventListener('submit', (e) => {
             e.preventDefault();
+
+            if (!isEmailVerified) {
+                alert('Please verify your email address to proceed with the booking.');
+                return;
+            }
 
             const selectedResort = document.querySelector('input[name="resort"]:checked')?.value;
             const selectedRoom = document.querySelector('input[name="room_type"]:checked')?.value;
