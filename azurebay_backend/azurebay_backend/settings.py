@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'azurebay_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv("postgres"),
-        'USER': os.getenv("postgres.elnmnurvenbhckhyvwds"),
-        'PASSWORD': os.getenv("Athul@supabase2007"),
-        'HOST': os.getenv("aws-1-ap-northeast-1.pooler.supabase.com"),
-        'PORT': os.getenv("6543"),
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),
+        'PORT': os.getenv("DB_PORT"),
     }
 }
 
