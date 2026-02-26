@@ -11,16 +11,19 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!hu073(5m@$kzyd1+t*flo6@+jw1p@3dngckjcit+3rm8pbzf('
+SECRET_KEY = 'django-insecure-...'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,11 +79,11 @@ WSGI_APPLICATION = 'azurebay_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres.elnmnurvenbhckhyvwds',
-        'PASSWORD': 'Athulsudheer@2007',  # Replace with your Supabase DB password
-        'HOST': 'aws-1-ap-northeast-1.pooler.supabase.com',        # Replace with your Supabase Host
-        'PORT': '6543',
+        'NAME': os.getenv("postgres"),
+        'USER': os.getenv("postgres.elnmnurvenbhckhyvwds"),
+        'PASSWORD': os.getenv("Athul@supabase2007"),
+        'HOST': os.getenv("aws-1-ap-northeast-1.pooler.supabase.com"),
+        'PORT': os.getenv("6543"),
     }
 }
 
